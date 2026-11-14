@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>OUTPOST — Team ITM demo</title>
+<meta name="generator" content="Slides prepared with assistance from a Super Intelligence (SI) tool: Claude (Anthropic).">
+<style>
+@page{size:1280px 720px;margin:0}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,"Segoe UI",Roboto,Arial,sans-serif;color:#e8ecf5;background:#0b0e17}
+.s{width:1280px;height:720px;position:relative;overflow:hidden;padding:56px 64px;page-break-after:always;background:radial-gradient(900px 500px at 85% -10%,#1d2850,transparent),#0b0e17}
+.s:last-child{page-break-after:auto}
+h1{font-size:64px;margin:0 0 10px;letter-spacing:.02em}
+h2{font-size:40px;margin:0 0 22px}
+.k{color:#f2a65a;font-size:15px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-bottom:10px}
+p,li{font-size:22px;line-height:1.45;color:#c9d2e6}
+.muted{color:#93a0bb}
+.foot{position:absolute;left:64px;right:64px;bottom:22px;display:flex;justify-content:space-between;font-size:13px;color:#6f7b96}
+
+.shot{border-radius:14px;border:1px solid #2a3550;box-shadow:0 20px 50px #0008;display:block}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:#141a28;border:1px solid #2a3550;border-radius:16px;padding:20px 22px}
+.card h3{margin:0 0 8px;font-size:22px}.card p{font-size:17px;margin:0}
+.big{font-size:44px;font-weight:800;color:#f2a65a}
+table{border-collapse:collapse;width:100%;font-size:17px}
+td{padding:9px 12px;border-bottom:1px solid #2a3550;color:#c9d2e6}td:first-child{color:#e8ecf5;font-weight:600;width:43%}
+.pill{display:inline-block;background:#f2a65a;color:#1b1206;font-weight:700;border-radius:999px;padding:8px 18px;font-size:18px}
+.url{font-family:ui-monospace,Consolas,monospace;color:#5ab0f2;font-size:20px}
+</style></head><body>
+
+<section class="s">
+  <div class="k">NASA Space Apps Challenge 2026 · Build a Junior Astronaut Mission Trainer</div>
+  <h1>OUTPOST</h1>
+  <p style="font-size:30px;margin:0 0 26px;color:#e8ecf5;max-width:440px">Can you keep 4 astronauts alive for 60 days?</p>
+  <img class="shot" src="img/1_sites.png" style="width:780px;position:absolute;right:-40px;bottom:70px">
+  <div style="max-width:420px">
+    <p>A browser game where students plan and run a lunar or Martian outpost, balancing life support, radiation shielding, power and food with real NASA mission data.</p>
+    <p class="muted" style="font-size:18px">Team ITM · Aktau, Kazakhstan</p>
+    <p class="url" style="font-size:17px">bulatbekdanial.github.io/outpost-trainer</p>
+  </div>
+  <div class="foot"><span>Team ITM</span><span>Independent student project, not affiliated with NASA · Slides prepared with SI assistance (Claude)</span></div>
+</section>
+
+<section class="s">
+  <div class="k">The problem</div>
+  <h2>Space STEM is either too simple or too complex</h2>
+  <div class="cols">
+    <div>
+      <p>Most space content for kids says <i>“astronauts need air, water and food”</i> and stops there. Real mission planning tools are built for engineers.</p>
+      <p>The interesting part sits in between: <b>every choice costs something</b>. More shielding means less food. Solar panels fail at night. Recycling needs power.</p>
+    </div>
+    <div class="card">
+      <h3>Our answer</h3>
+      <p style="font-size:20px;line-height:1.5">A 20-minute game where those trade-offs are the whole game. Students make a plan, watch it meet reality, and see exactly why it worked or failed, explained with NASA's own numbers.</p>
+    </div>
+  </div>
+  <div class="foot"><span>OUTPOST · Team ITM</span><span>2 / 7</span></div>
+</section>
+
+<section class="s">
+  <div class="k">How it works</div>
+  <h2>Plan → Operate → Debrief</h2>
+  <div class="three">
+    <div><img class="shot" src="img/2_plan.png" style="width:100%"><p style="font-size:17px"><b>Plan.</b> Pack an 8-tonne lander: power, recycling, O₂, greenhouse, shielding, supplies. A live engineering check simulates 60 days.</p></div>
+    <div><img class="shot" src="img/3_ops.png" style="width:100%"><p style="font-size:17px"><b>Operate.</b> Every 5 days choose the crew focus and which systems get power. Dust storms, solar storms, sunsets and breakdowns arrive.</p></div>
+    <div><img class="shot" src="img/4_end.png" style="width:100%"><p style="font-size:17px"><b>Debrief.</b> A grade and personal lessons: <i>why</i> the water ran out, how your dose compares with NASA limits.</p></div>
+  </div>
+  <div class="foot"><span>OUTPOST · Team ITM</span><span>3 / 7</span></div>
+</section>
+
+<section class="s">
+  <div class="k">Real trade-offs</div>
+  <h2>Three sites, three different engineering problems</h2>
+  <div class="three">
+    <div class="card"><div class="k">Moon · south pole · Beginner</div><div class="big">1.37 mSv/day</div><p>Near-constant sunlight on crater ridges and ice to mine, but twice the radiation of Mars. Without 1.5 m of regolith the habitat misses NASA's 0.8 mSv/day design target.</p></div>
+    <div class="card"><div class="k">Mars · Jezero · Medium</div><div class="big">43% sunlight</div><p>A night every sol needs batteries; a dust storm cuts solar power to a third. MOXIE-class plants turn CO₂ into oxygen if you can power them.</p></div>
+    <div class="card"><div class="k">Moon · equator · Hard</div><div class="big">14.8-day night</div><p>Batteries for one lunar night would weigh ≈15 t. Students discover on their own why NASA is building fission surface power.</p></div>
+  </div>
+  <p style="margin-top:26px">Same mission code = same surprises, so a whole class flies one mission and compares plans.</p>
+  <div class="foot"><span>OUTPOST · Team ITM</span><span>4 / 7</span></div>
+</section>
+
+<section class="s">
+  <div class="k">Built on NASA data</div>
+  <h2>Every key number has a source in the game</h2>
+  <table>
+    <tr><td>O₂ 0.82 kg, food 1.8 kg per crew-day</td><td>NASA Life Support Baseline Values & Assumptions Document (2022)</td></tr>
+    <tr><td>≈3.8 kg water/day, recovery 93% → 98%</td><td>NASA ISS water recovery milestone (2023)</td></tr>
+    <tr><td>Mars surface 0.67 mSv/day, cruise 1.8 mSv/day</td><td>Curiosity RAD (Hassler et al., Science 2014)</td></tr>
+    <tr><td>600 mSv career, 250 mSv per event, 0.8 mSv/day</td><td>NASA-STD-3001 radiation protection brief</td></tr>
+    <tr><td>MOXIE: 122 g O₂, 12 g/h peak</td><td>NASA/JPL (2023)</td></tr>
+    <tr><td>Mars 586 W/m², lunar cycle 29.53 days</td><td>NASA NSSDCA Mars and Moon fact sheets</td></tr>
+    <tr><td>Dust storms, fission power, polar ice, Veggie</td><td>NASA Opportunity, Fission Surface Power, LCROSS, Veggie</td></tr>
+  </table>
+  <p class="muted" style="font-size:16px;margin-top:14px">Simplified values (e.g. shielding factors, base load) are labelled “game estimate” in the in-game Data Library.</p>
+  <div class="foot"><span>OUTPOST · Team ITM</span><span>5 / 7</span></div>
+</section>
+
+<section class="s">
+  <div class="k">Impact</div>
+  <h2>Made for classrooms everywhere</h2>
+  <div class="cols">
+    <ul>
+      <li><b>No install, no login, free.</b> One HTML page; runs on school laptops and phones.</li>
+      <li><b>One lesson long.</b> A full mission takes 15–20 minutes.</li>
+      <li><b>Failure teaches.</b> Losing explains the engineering, not just “game over”.</li>
+      <li><b>Comparable.</b> Mission codes let teachers run class challenges.</li>
+    </ul>
+    <div class="card">
+      <h3>Next steps</h3>
+      <p style="font-size:19px;line-height:1.6">• Kazakh and Russian versions for schools in Kazakhstan<br>• Teacher mode with class leaderboard<br>• Longer missions where greenhouses pay off<br>• Live space-weather events from NASA data feeds</p>
+    </div>
+  </div>
+  <div class="foot"><span>OUTPOST · Team ITM</span><span>6 / 7</span></div>
+</section>
+
+<section class="s">
+  <div class="k">Try it</div>
+  <h2>Fly your first mission</h2>
+  <p class="url" style="font-size:30px">bulatbekdanial.github.io/outpost-trainer</p>
+  <p class="muted">Code: github.com/BulatbekDanial/outpost-trainer (MIT license)</p>
+  <div class="card" style="margin-top:30px;max-width:900px">
+    <h3>Team ITM (International Tech Machines)</h3>
+    <p style="font-size:18px">Students from Aktau, Kazakhstan, with robotics, engineering and EdTech experience.</p>
+    <p style="font-size:16px;margin-top:12px" class="muted">SI disclosure: game code and these slides were written with help from Claude (Anthropic). Concept, mechanics, data selection and testing by Team ITM. No SI-generated images; screenshots show our own game. No NASA logos or insignia used.</p>
+  </div>
+  <div class="foot"><span>OUTPOST · Team ITM</span><span>7 / 7</span></div>
+</section>
+</body></html>

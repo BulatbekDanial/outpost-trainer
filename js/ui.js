@@ -194,7 +194,7 @@
     $("#scene").innerHTML = scene(m.siteId, m.lo, { k: "ops", night: site.night(m.day), storm: m.storm > 0, eva: S.focus === "eva", spe: m.pendingSPE, greenOff: !m.toggles.greenhouse });
     const g = [
       ["Oxygen", m.o2, "o2", "kg", "var(--o2)"], ["Water", m.water, "water", "kg", "var(--water)"], ["Food", m.food, "food", "kg", "var(--food)"]
-    ].map(([l, v, k, u, c]) => { const days = v / NEED[k]; return `<div class="g ${days < 5 ? "low" : ""}"><div class="l">${l}</div><div class="v">${fmt(v)} ${u}</div><div class="s">${fmt(days)} days left</div><div class="mini"><i style="width:${Math.min(100, days / 30 * 100)}%;background:${c}"></i></div></div>`; });
+    ].map(([l, v, k, u, c]) => { const days = v / NEED[k]; return `<div class="g ${days < 5 ? "low" : ""}"><div class="l">${l}</div><div class="v">${fmt(v)} ${u}</div><div class="s">${fmt(days)} days ${k === "food" ? "left" : k === "water" ? "if recycling stops" : "if O₂ production stops"}</div><div class="mini"><i style="width:${Math.min(100, days / 30 * 100)}%;background:${c}"></i></div></div>`; });
     const bp = m.batteryCap ? m.battery / m.batteryCap * 100 : 0;
     g.push(`<div class="g"><div class="l">Battery</div><div class="v">${m.batteryCap ? fmt(bp) + "%" : "none"}</div><div class="s">${fmt(m.battery)} / ${fmt(m.batteryCap)} kWh</div><div class="mini"><i style="width:${bp}%;background:var(--bat)"></i></div></div>`);
     const days = Math.max(1, m.day);
