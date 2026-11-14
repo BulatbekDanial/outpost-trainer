@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OUTPOST — Junior Astronaut Mission Trainer</title>
+<meta name="description" content="A browser game where students plan and run a lunar or Martian outpost, balancing life support, radiation shielding, power and food with real NASA mission data. NASA Space Apps Challenge 2026 — Team ITM.">
+<meta name="author" content="Team ITM (International Tech Machines)">
+<meta name="generator" content="Code written with assistance from a Super Intelligence (SI) tool: Claude (Anthropic). Game design, data choices and testing by Team ITM.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='14' fill='%23f2a65a'/><path d='M6 22h20v4H6z' fill='%23222'/></svg>">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="logo">◐</span> OUTPOST <small>Junior Astronaut Mission Trainer</small></div>
+  <nav>
+    <button class="link" data-open="library">Data Library</button>
+    <button class="link" data-open="howto">How to play</button>
+  </nav>
+</header>
+
+<main id="app">
+  <!-- 1. destination -->
+  <section id="scr-site" class="screen active">
+    <div class="hero">
+      <h1>Can you keep 4 astronauts alive for 60 days?</h1>
+      <p>You are mission planner for humanity's first outpost. Choose a site, pack an 8-tonne cargo lander, then run the base through dust storms, lunar nights and solar storms. Every number in this game comes from real NASA missions.</p>
+    </div>
+    <div id="site-cards" class="cards3"></div>
+    <div class="seedrow">
+      <label>Mission code <input id="seed" maxlength="12" value="ITM-2026"></label>
+      <span class="hint">Same code = same surprises. Use it to compare plans with classmates.</span>
+    </div>
+  </section>
+
+  <!-- 2. planner -->
+  <section id="scr-plan" class="screen">
+    <div class="plan-head">
+      <button class="ghost" data-go="site">← Sites</button>
+      <h2 id="plan-title"></h2>
+      <div class="massbox">
+        <div class="masslabel"><span>Cargo mass</span><b id="mass-num"></b></div>
+        <div class="bar"><i id="mass-bar"></i></div>
+      </div>
+    </div>
+    <div class="plan-grid">
+      <div class="panel">
+        <h3>1 · Systems</h3>
+        <div id="mod-list"></div>
+      </div>
+      <div class="panel">
+        <h3>2 · Supplies for 4 crew</h3>
+        <div id="sup-list"></div>
+        <h3>3 · Engineering check <span class="hint">(60 days, no surprises)</span></h3>
+        <div id="power-sum" class="kv"></div>
+        <svg id="fc-chart" class="chart" viewBox="0 0 520 190" role="img" aria-label="Forecast chart"></svg>
+        <ul id="fc-warn" class="warn"></ul>
+        <div class="row-end">
+          <button class="ghost" id="btn-auto">Suggest a starter plan</button>
+          <button class="primary" id="btn-launch">Launch mission 🚀</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. operations -->
+  <section id="scr-ops" class="screen">
+    <div class="ops-grid">
+      <div class="panel scene-panel">
+        <div class="ops-title"><b id="ops-site"></b><span id="ops-day"></span></div>
+        <svg id="scene" viewBox="0 0 600 260" role="img" aria-label="Outpost view"></svg>
+        <div id="gauges" class="gauges"></div>
+        <svg id="ops-chart" class="chart" viewBox="0 0 520 170" role="img" aria-label="Resource history"></svg>
+      </div>
+      <div class="panel">
+        <h3>Mission briefing</h3>
+        <ul id="brief" class="events"></ul>
+        <h3>Crew focus for the next 5 <span class="dw"></span>s</h3>
+        <div id="focus" class="focus"></div>
+        <h3>Power switches</h3>
+        <div id="toggles" class="toggles"></div>
+        <button class="primary wide" id="btn-turn">Run next 5 <span class="dw"></span>s ▶</button>
+        <h3>Mission log</h3>
+        <ol id="log" class="log"></ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. debrief -->
+  <section id="scr-end" class="screen">
+    <div class="panel end">
+      <div class="endhead">
+        <div id="grade" class="grade"></div>
+        <div>
+          <h2 id="end-title"></h2>
+          <p id="end-sub"></p>
+        </div>
+      </div>
+      <div id="end-stats" class="statgrid"></div>
+      <svg id="end-chart" class="chart" viewBox="0 0 520 170" role="img" aria-label="Mission history"></svg>
+      <h3>What real mission planners learn from this</h3>
+      <div id="lessons" class="lessons"></div>
+      <div class="row-end">
+        <button class="ghost" data-go="plan">Change the plan & retry</button>
+        <button class="primary" data-go="site">Try another site</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<dialog id="dlg-library"><div class="dlg">
+  <h2>Data Library</h2>
+  <p>Where every number comes from. Values marked <em>game estimate</em> are simplified so the game stays playable in a class period.</p>
+  <div id="lib"></div>
+  <button class="primary" data-close>Close</button>
+</div></dialog>
+
+<dialog id="dlg-howto"><div class="dlg">
+  <h2>How to play</h2>
+  <ol>
+    <li><b>Pick a site.</b> The Moon's pole, the Moon's equator and Mars each break a different system.</li>
+    <li><b>Pack the lander.</b> 8,000 kg for power, life support, shielding and supplies. The engineering check shows if your base survives 60 days with no surprises.</li>
+    <li><b>Run the outpost.</b> Every 5 days choose what the crew does and which systems get power. React to dust storms, solar storms, sunsets and breakdowns.</li>
+    <li><b>Debrief.</b> See your grade and the real engineering lessons behind your choices.</li>
+  </ol>
+  <p><b>You lose</b> if oxygen, water or food runs out. <b>You score</b> for science, crew morale, safe radiation levels and keeping reserves.</p>
+  <button class="primary" data-close>Got it</button>
+</div></dialog>
+
+<footer class="foot">
+  NASA Space Apps Challenge 2026 · Team ITM · Challenge: Build a Junior Astronaut Mission Trainer ·
+  Independent student project, not affiliated with or endorsed by NASA. ·
+  <span title="SI disclosure">SI disclosure: code written with assistance from Claude (Anthropic); design, data selection and testing by Team ITM.</span>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/sim.js"></script>
+<script src="js/ui.js"></script>
+</body>
+</html>
