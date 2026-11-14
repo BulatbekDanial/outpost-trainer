@@ -27,7 +27,7 @@ A *mission code* seeds the random events, so a whole class can fly the same miss
 | O₂ 0.82 kg and food 1.8 kg per crew-day | NASA Life Support Baseline Values and Assumptions Document (BVAD), 2022 |
 | Water ≈3.8 kg per crew-day; recycling 93% → 98% | NASA, ISS water recovery milestone (Brine Processor), 2023 |
 | Mars surface dose 0.67 mSv/day; cruise 1.8 mSv/day | Curiosity RAD, Hassler et al. 2014 |
-| Lunar radiation environment | LRO CRaTER; lunar surface 1.37 mSv/day from Chang'e-4 LND (Zhang et al. 2020) |
+| Lunar radiation environment | LRO CRaTER (https://svs.gsfc.nasa.gov/10587); lunar surface 1.37 mSv/day from Chang'e-4 LND (Zhang et al. 2020) |
 | 600 mSv career limit, 250 mSv per solar event, 0.8 mSv/day surface design target | NASA-STD-3001 / OCHMO technical brief |
 | MOXIE oxygen production (122 g total, 12 g/h peak) | NASA/JPL, 2023 |
 | Mars sunlight 586 W/m², sol length | NASA NSSDCA Mars Fact Sheet |

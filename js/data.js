@@ -21,7 +21,7 @@ const SOURCES = {
   },
   crater: {
     title: "NASA LRO / CRaTER — Cosmic Ray Telescope for the Effects of Radiation (lunar radiation data)",
-    url: "https://iswa.gsfc.nasa.gov/iswa_data_tree/information/CRaTER.html",
+    url: "https://svs.gsfc.nasa.gov/10587",
     note: "Measures galactic cosmic rays and solar particles near the Moon since 2009."
   },
   change4: {
